@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de JSON-LD — marcação Schema interativa</title>
+  <style>
+body{font-family:Segoe UI,sans-serif;padding:20px;background:#f8fafc;color:#0f172a}h2{font-size:1.1rem;color:#0284c7;margin-bottom:14px}h3{font-size:.9rem;color:#0f172a;margin:14px 0 8px}.form{background:#fff;padding:14px;border:1px solid #cbd5e1;border-radius:8px;margin-bottom:12px}.form label{display:block;font-size:.78rem;font-weight:700;margin-top:8px;margin-bottom:3px}.form input,.form select{width:100%;padding:7px 10px;border:1px solid #cbd5e1;border-radius:5px;font-family:inherit;font-size:.82rem}.form label:first-child{margin-top:0}pre{background:#0f172a;color:#38bdf8;padding:14px;border-radius:8px;font-family:"Courier New",monospace;font-size:.78rem;overflow-x:auto;line-height:1.5;white-space:pre-wrap;word-wrap:break-word;min-height:180px}
+  </style>
+</head>
+<body>
+<h2>📊 Gerador de JSON-LD</h2><div class="form"><label>Tipo de Schema:</label><select id="selTipo"><option value="Product">🛒 Produto (Product)</option><option value="Article">📰 Artigo (Article)</option><option value="Recipe">🍰 Receita (Recipe)</option><option value="Event">🎫 Evento (Event)</option><option value="Review">⭐ Avaliação (Review)</option></select><label>Nome:</label><input id="inNome" value="Camiseta Artesanal"><label>Preço (Produto/Evento):</label><input id="inPreco" value="79.90"><label>Nota (Avaliação):</label><input id="inNota" value="4.8"></div><h3>Código gerado:</h3><pre id="codigo"></pre>
+  <script>
+function gerar(){var tipo=document.getElementById("selTipo").value;var nome=document.getElementById("inNome").value;var preco=parseFloat(document.getElementById("inPreco").value)||0;var nota=parseFloat(document.getElementById("inNota").value)||0;var obj={"@context":"https://schema.org","@type":tipo,"name":nome};if(tipo==="Product"){obj.image="https://seusite.com.br/img/produto.jpg";obj.sku="CAM-ART-001";obj.brand={"@type":"Brand","name":"Sua Marca"};obj.offers={"@type":"Offer","url":"https://seusite.com.br/produto","price":preco,"priceCurrency":"BRL","availability":"https://schema.org/InStock","itemCondition":"https://schema.org/NewCondition"};obj.aggregateRating={"@type":"AggregateRating","ratingValue":nota,"reviewCount":127,"bestRating":5,"worstRating":1};}if(tipo==="Recipe"){obj.recipeIngredient=["2 xícaras de farinha","1 colher de sal"];obj.recipeInstructions=["Misture os ingredientes","Asse por 30 minutos"];obj.prepTime="PT15M";obj.cookTime="PT30M";}if(tipo==="Event"){obj.startDate="2026-12-01T19:00:00-03:00";obj.location={"@type":"Place","name":"Centro de Convenções","address":"Juiz de Fora, MG"};obj.offers={"@type":"Offer","price":preco,"priceCurrency":"BRL","availability":"https://schema.org/InStock"};}if(tipo==="Review"){obj.itemReviewed={"@type":"Product","name":nome};obj.reviewRating={"@type":"Rating","ratingValue":nota,"bestRating":5};obj.author={"@type":"Person","name":"Cliente"};}if(tipo==="Article"){obj.author={"@type":"Person","name":"Autor"};obj.datePublished="2026-01-15";obj.headline=nome;}var txt="<"+"script type=\"application/ld+json\">\n"+JSON.stringify(obj,null,2)+"\n<"+"/script>";document.getElementById("codigo").textContent=txt;}["selTipo","inNome","inPreco","inNota"].forEach(function(id){var el=document.getElementById(id);el.addEventListener("input",gerar);el.addEventListener("change",gerar);});gerar();
+  </script>
+</body>
+</html>

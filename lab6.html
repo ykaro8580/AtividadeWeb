@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesquisa por voz — pergunta × resposta direta</title>
+  <style>
+body{font-family:Segoe UI,sans-serif;padding:20px;background:#f8fafc;color:#0f172a}h2{font-size:1.1rem;color:#0284c7;margin-bottom:14px}h3{font-size:.9rem;margin:14px 0 8px}.duas{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}.col{background:#fff;border:1px solid #cbd5e1;border-radius:8px;padding:14px}.pergunta{padding:10px 14px;border-radius:6px;font-family:monospace;font-size:.84rem;margin-bottom:12px}.pergunta.ruim{background:#fee2e2;color:#991b1b;border-left:3px solid #dc2626}.pergunta.boa{background:#dcfce7;color:#166534;border-left:3px solid #16a34a}.resposta{background:#eff6ff;border:1px solid #93c5fd;border-radius:8px;padding:12px 14px;font-size:.85rem;color:#1e40af;line-height:1.6}.lista-praticas{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}.pratica{background:#fff;border:1px solid #cbd5e1;padding:10px 14px;border-radius:6px;cursor:pointer;font-size:.83rem;color:#475569;transition:.2s}.pratica:hover{border-color:#0284c7}.pratica strong{color:#0f172a;display:block;margin-bottom:2px}.info{background:#e0f2fe;border-left:4px solid #0284c7;padding:10px 14px;border-radius:6px;font-size:.8rem;color:#0369a1}@media(max-width:640px){.duas{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<h2>🗣️ Otimização para voz</h2><div class="duas"><div class="col"><h3>❌ Pergunta genérica (SEO tradicional)</h3><div class="pergunta ruim">"SEO local"</div><h3>✅ Pergunta completa (voz)</h3><div class="pergunta boa">"Como fazer SEO local para minha loja de Juiz de Fora?"</div></div><div class="col"><h3>Resposta direta (ideal para voz)</h3><div class="resposta">Para fazer SEO local, use palavras-chave geográficas, crie páginas específicas por filial, otimize o Google Meu Negócio e incentive avaliações de clientes. <strong>Comece pelo perfil do Google Meu Negócio.</strong></div></div></div><h3>Boas práticas da apostila (clique para expandir):</h3><div class="lista-praticas"><div class="pratica" data-info="A voz usa frases completas. O texto deve começar com a resposta."><strong>1. Respostas Diretas</strong>Comece pelo resultado, não por contexto.</div><div class="pratica" data-info="Formate em perguntas e respostas (P&amp;R) para alinhar com a forma da busca."><strong>2. P&amp;R Estruturadas</strong>Organize seções com perguntas claras.</div><div class="pratica" data-info="Snippets em destaque são lidos em voz alta pelos assistentes."><strong>3. Featured Snippets</strong>Estruture com listas numeradas ou parágrafos objetivos.</div><div class="pratica" data-info="Use linguagem do dia a dia, sem jargão excessivo."><strong>4. Vocabulário Natural</strong>Escreva como as pessoas falam.</div></div><div class="info" id="infoPratica">Clique em uma prática para ver a explicação.</div>
+  <script>
+document.querySelectorAll(".pratica").forEach(function(p){p.addEventListener("click",function(){document.getElementById("infoPratica").textContent=p.dataset.info;});});
+  </script>
+</body>
+</html>

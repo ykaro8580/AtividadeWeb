@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Meu Negócio — os 8 recursos</title>
+  <style>
+body{font-family:Segoe UI,sans-serif;padding:20px;background:#f8fafc;color:#0f172a}h2{font-size:1.1rem;color:#0284c7;margin-bottom:14px}.grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:14px}.card{background:#fff;border:2px solid #cbd5e1;border-top:4px solid #0284c7;border-radius:10px;padding:12px 14px;cursor:pointer;transition:.2s}.card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(2,132,199,.15)}.card .icon{font-size:1.5rem;margin-bottom:4px}.card h4{font-size:.85rem;color:#0369a1;margin-bottom:4px}.card p{font-size:.75rem;color:#475569;margin:0;line-height:1.4}.card:nth-child(2){border-top-color:#10b981}.card:nth-child(3){border-top-color:#7c3aed}.card:nth-child(4){border-top-color:#ea580c}.card:nth-child(5){border-top-color:#ec4899}.card:nth-child(6){border-top-color:#f59e0b}.card:nth-child(7){border-top-color:#06b6d4}.card:nth-child(8){border-top-color:#8b5cf6}.info{background:#e0f2fe;border-left:4px solid #0284c7;padding:10px 14px;border-radius:6px;font-size:.8rem;color:#0369a1}
+  </style>
+</head>
+<body>
+<h2>📍 Google Meu Negócio — os 8 recursos</h2><div class="grade"><div class="card" data-info="Passo 1 obrigatório. Sem reivindicar, a empresa não tem controle sobre as informações exibidas."><div class="icon">✅</div><h4>1. Reivindicação</h4><p>Reivindicar e verificar a ficha.</p></div><div class="card" data-info="Horário, telefone, endereço e categoria completos. Categorias corretas são fundamentais para aparecer nas buscas locais."><div class="icon">📋</div><h4>2. Informações</h4><p>Horário, telefone, endereço, categoria.</p></div><div class="card" data-info="Fotos de alta resolução do estabelecimento, produtos e equipe. Perfis com fotos recebem mais cliques."><div class="icon">📸</div><h4>3. Fotos</h4><p>Estabelecimento, produtos, equipe.</p></div><div class="card" data-info="Responder avaliações (mesmo negativas) mostra profissionalismo e melhora reputação."><div class="icon">💬</div><h4>4. Avaliações</h4><p>Responder positivas e negativas.</p></div><div class="card" data-info="Publicações semanais (ofertas, novidades) mantêm o perfil ativo e aumentam a visibilidade."><div class="icon">📢</div><h4>5. Publicações</h4><p>Ofertas, eventos e novidades.</p></div><div class="card" data-info="Insights mostram como as pessoas encontram e interagem com o negócio. Essencial para ajustar a estratégia."><div class="icon">📊</div><h4>6. Insights</h4><p>Como as pessoas encontram o negócio.</p></div><div class="card" data-info="Geotague fotos com a localização — melhora a relevância geográfica nas buscas locais."><div class="icon">📍</div><h4>7. Geotagging</h4><p>Marcar fotos com localização.</p></div><div class="card" data-info="Mensagens diretas e reservas online quando fizer sentido. Adiciona um canal a mais de conversão."><div class="icon">🔧</div><h4>8. Recursos extras</h4><p>Mensagens e reservas online.</p></div></div><div class="info" id="infoRecurso">Clique em um recurso para ver detalhes práticos.</div>
+  <script>
+document.querySelectorAll(".card").forEach(function(c){c.addEventListener("click",function(){document.getElementById("infoRecurso").textContent=c.dataset.info;});});
+  </script>
+</body>
+</html>

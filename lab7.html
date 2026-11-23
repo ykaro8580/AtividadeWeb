@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funil de e-commerce — da visita à compra</title>
+  <style>
+body{font-family:Segoe UI,sans-serif;padding:20px;background:#f8fafc;color:#0f172a}h2{font-size:1.1rem;color:#0284c7;margin-bottom:14px}.funil{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}.etapa{background:#fff;padding:2px;border-radius:8px;cursor:pointer;transition:.2s}.etapa:hover{transform:scale(1.01)}.barra{color:#fff;padding:12px 16px;border-radius:6px;font-weight:bold;font-size:.84rem}.info{background:#e0f2fe;border-left:4px solid #0284c7;padding:10px 14px;border-radius:6px;font-size:.8rem;color:#0369a1}
+  </style>
+</head>
+<body>
+<h2>🛒 Funil de conversão (e-commerce)</h2><div class="funil"><div class="etapa" data-info="Otimize: páginas de categoria, meta tags de produto, imagens de qualidade, Schema de Produto para enriquecer SERP."><div class="barra" style="width:100%;background:#0284c7"><span>1. Visita • 10.000</span></div></div><div class="etapa" data-info="Otimize: descrições únicas, avaliações de clientes, produtos relacionados."><div class="barra" style="width:35%;background:#0891b2"><span>2. Produto • 3.500</span></div></div><div class="etapa" data-info="Otimize: preço claro, frete grátis, botão de compra visível, mobile-first."><div class="barra" style="width:15%;background:#0d9488"><span>3. Carrinho • 1.500</span></div></div><div class="etapa" data-info="Gargalo típico. Otimize: formulário curto, opções de pagamento, prova social. Cada 100 melhoras no checkout valem mais que 1.000 visitas extras."><div class="barra" style="width:5%;background:#059669"><span>4. Compra • 500</span></div></div></div><div class="info" id="infoFunil">Clique em uma etapa para ver a dica específica de otimização.</div>
+  <script>
+document.querySelectorAll(".etapa").forEach(function(e){e.addEventListener("click",function(){document.getElementById("infoFunil").textContent=e.dataset.info;});});
+  </script>
+</body>
+</html>

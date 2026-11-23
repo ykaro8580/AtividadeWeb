@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de URL — amigável vs não amigável</title>
+  <style>
+body{font-family:Segoe UI,sans-serif;padding:20px;background:#f8fafc;color:#0f172a}h2{font-size:1.1rem;color:#0284c7;margin-bottom:14px}h3{font-size:.9rem;margin-bottom:8px}.form{background:#fff;padding:14px;border:1px solid #cbd5e1;border-radius:8px;margin-bottom:14px}.form label{display:block;font-size:.8rem;font-weight:700;margin-bottom:6px}.form input{width:100%;padding:9px 12px;border:1px solid #cbd5e1;border-radius:6px;font-size:.85rem;margin-bottom:8px}.form button{background:#0284c7;color:#fff;border:none;padding:9px 18px;border-radius:6px;font-weight:700;cursor:pointer}.duas{display:grid;grid-template-columns:1fr 1fr;gap:14px}.col{background:#fff;border-radius:8px;padding:14px;border:1px solid #cbd5e1}.url{padding:10px 12px;border-radius:6px;font-family:monospace;font-size:.82rem;margin-bottom:14px;word-break:break-all}.url.feia{background:#fee2e2;color:#991b1b;border-left:3px solid #dc2626}.url.bonita{background:#dcfce7;color:#166534;border-left:3px solid #16a34a}.lista{list-style:none;padding:0;font-size:.82rem;color:#475569;line-height:1.8}@media(max-width:640px){.duas{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<h2>🔗 Simulador de URL amigável</h2><div class="form"><label>Digite o título da página:</label><input id="inTitulo" value="Camisetas artesanais em Minas Gerais 2026"><button type="button" id="btnGerar">Gerar URLs</button></div><div class="duas"><div class="col"><h3>❌ URL não amigável</h3><div class="url feia" id="urlFeia">—</div><h3>✅ URL amigável</h3><div class="url bonita" id="urlBonita">—</div></div><div class="col"><h3>O que muda:</h3><ul class="lista"><li>👁️ Legibilidade: usuário entende o que vai ver</li><li>📈 SEO: contém palavras-chave relevantes</li><li>🔗 Compartilhamento: URL limpa fica melhor em redes sociais</li><li>📊 Analytics: relatório mostra o assunto do conteúdo</li></ul></div></div>
+  <script>
+function removerAcentos(s){var mapa={"á":"a","à":"a","ã":"a","â":"a","ä":"a","é":"e","è":"e","ê":"e","ë":"e","í":"i","ì":"i","î":"i","ï":"i","ó":"o","ò":"o","õ":"o","ô":"o","ö":"o","ú":"u","ù":"u","û":"u","ü":"u","ç":"c","Á":"A","À":"A","Ã":"A","Â":"A","É":"E","È":"E","Ê":"E","Í":"I","Ì":"I","Î":"I","Ó":"O","Ò":"O","Õ":"O","Ô":"O","Ú":"U","Ù":"U","Û":"U","Ç":"C"};return s.replace(/[^a-zA-Z0-9]/g,function(c){return mapa[c]!==undefined?mapa[c]:c;});}function gerar(){var t=document.getElementById("inTitulo").value;var limpo=removerAcentos(t).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");if(!limpo)limpo="pagina";document.getElementById("urlBonita").textContent="/"+limpo;var id=Math.floor(Math.random()*999)+1;document.getElementById("urlFeia").textContent="/p?id="+id+"&cat="+limpo.substring(0,8)+"&x=1&y=2";}document.getElementById("btnGerar").addEventListener("click",gerar);document.getElementById("inTitulo").addEventListener("input",gerar);gerar();
+  </script>
+</body>
+</html>

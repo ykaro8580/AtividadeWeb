@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel de métricas — CTR, Rejeição e Tempo na Página</title>
+  <style>
+body{font-family:Segoe UI,sans-serif;padding:20px;background:#f8fafc;color:#0f172a}h2{font-size:1.1rem;color:#0284c7;margin-bottom:14px}.botoes{display:flex;gap:6px;margin-bottom:14px}.met{background:#1e293b;color:#cbd5e1;border:none;padding:7px 16px;border-radius:20px;font-size:.78rem;font-weight:700;cursor:pointer;transition:.2s}.met:hover{background:#334155}.met.ativo{background:#0284c7;color:#fff}.painel{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}.card-met{background:#fff;border:2px solid #cbd5e1;border-radius:12px;padding:18px;text-align:center}.icon{font-size:1.6rem;margin-bottom:4px}.valor{font-size:1.8rem;font-weight:900;color:#0369a1;margin-bottom:2px}.label{font-size:.74rem;color:#64748b;font-weight:700;text-transform:uppercase}.info{background:#e0f2fe;border-left:4px solid #0284c7;padding:10px 14px;border-radius:6px;font-size:.8rem;color:#0369a1}
+  </style>
+</head>
+<body>
+<h2>📈 Dashboard de métricas</h2><div class="botoes"><button type="button" class="met ativo" data-mes="jan">Janeiro</button><button type="button" class="met" data-mes="fev">Fevereiro</button><button type="button" class="met" data-mes="mar">Março</button></div><div class="painel"><div class="card-met"><div class="icon">🎯</div><div class="valor" id="vCTR">—</div><div class="label">CTR</div></div><div class="card-met"><div class="icon">💔</div><div class="valor" id="vRej">—</div><div class="label">Rejeição</div></div><div class="card-met"><div class="icon">⏱️</div><div class="valor" id="vTempo">—</div><div class="label">Tempo</div></div></div><div class="info" id="infoMes">Selecione um mês para ver os detalhes.</div>
+  <script>
+var dados={jan:{ctr:"2.1%",rej:"78%",tempo:"45s",info:"Janeiro: métricas ainda baixas, refletindo a situação antes da otimização."},fev:{ctr:"3.8%",rej:"62%",tempo:"1min10s",info:"Fevereiro: título e meta description foram reescritos e rejeição caiu."},mar:{ctr:"5.2%",rej:"45%",tempo:"2min05s",info:"Março: otimização consolidada — todos os indicadores evoluíram."}};function atualizarMes(mes){var d=dados[mes];if(!d)return;document.getElementById("vCTR").textContent=d.ctr;document.getElementById("vRej").textContent=d.rej;document.getElementById("vTempo").textContent=d.tempo;document.getElementById("infoMes").textContent=d.info;}document.querySelectorAll(".met").forEach(function(b){b.addEventListener("click",function(){document.querySelectorAll(".met").forEach(function(x){x.classList.remove("ativo");});b.classList.add("ativo");atualizarMes(b.dataset.mes);});});atualizarMes("jan");
+  </script>
+</body>
+</html>
